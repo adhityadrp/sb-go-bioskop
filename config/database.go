@@ -12,27 +12,27 @@ var DB *gorm.DB
 
 func ConnectDatabase() {
 	// Get environment variables with fallback values
-	dbHost := os.Getenv("DB_HOST")
+	dbHost := os.Getenv("PGHOST")
 	if dbHost == "" {
 		dbHost = "localhost"
 	}
 
-	dbUser := os.Getenv("DB_USER")
+	dbUser := os.Getenv("PGUSER")
 	if dbUser == "" {
 		dbUser = "postgres"
 	}
 
-	dbPassword := os.Getenv("DB_PASSWORD")
+	dbPassword := os.Getenv("PGPASSWORD")
 	if dbPassword == "" {
 		dbPassword = "postgres"
 	}
 
-	dbName := os.Getenv("DB_NAME")
+	dbName := os.Getenv("PGDATABASE")
 	if dbName == "" {
 		dbName = "sanbercode_golang_bioskop"
 	}
 
-	dbPort := os.Getenv("DB_PORT")
+	dbPort := os.Getenv("PGPORT")
 	if dbPort == "" {
 		dbPort = "5432"
 	}
